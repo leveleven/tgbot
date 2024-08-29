@@ -9,7 +9,7 @@ def handleRaffle(msg):
     if msg['text'] == '/raffle':
         bot.sendMessage(chat_id, 'winwinwin')
 
-TOKEN = '6562568583:AAGFDdAbU1UwE2V1xGVyXmEMMFdNVGF7Oys'
+TOKEN = 'bot_token'
 
 bot = telepot.Bot(TOKEN)
 MessageLoop(bot, handleRaffle).run_as_thread()

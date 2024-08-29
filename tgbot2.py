@@ -6,9 +6,8 @@ from telegram.ext import Application, CommandHandler, ContextTypes
 # 1. 改进：每个群有单独的队列
 
 lottery_list = []
-admin="lily8888886"
+admin="user"
 # lottery_list = ["aaa", "bbb", "ccc", "ddd", "eee", "fff", "ggg", "hhh", "iii", "jjj", "kkk", "lll", "mmm", "nnn", "ooo", "ppp", "qqq", "rrr", "sss"]
-# admin="leveleven1"
 
 # 定义抽奖命令的处理函数
 async def draw(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -94,7 +93,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         await context.bot.send_message(chat_id=chat_id, text="无权调用", reply_to_message_id=message_id)
 
 # 创建Updater对象并设置访问令牌
-application = Application.builder().token("6562568583:AAGFDdAbU1UwE2V1xGVyXmEMMFdNVGF7Oys").build()
+token="bot_token"
+application = Application.builder().token(token).build()
 application.add_handler(CommandHandler("start", start))
 
 # 启动机器人

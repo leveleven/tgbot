@@ -22,7 +22,7 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
 
 # ansible host组
-groups = ['client1,client2', 'pool', 'xiaochen']
+groups = ['group1', 'group2']
 
 # Enable logging
 # logging.basicConfig(
@@ -259,8 +259,9 @@ async def reward(context: ContextTypes.DEFAULT_TYPE) -> None:
 
 def main() -> None:
 
+    token = "bot_token"
     # Create the Application and pass it your bot's token.
-    application = Application.builder().token("7303149549:AAHKQ0ePdodl-4y5CMxX_GKcCQ3v7ExTg-8").build()
+    application = Application.builder().token(token).build()
 
     # on different commands - answer in Telegram
     application.add_handler(CommandHandler("start", start))
